@@ -1,0 +1,20 @@
+<section>
+    <fieldset>
+        <legend>Skills & Competences</legend>
+        <div id="skillcategory">
+            <legend>Enter the skills category name:</legend>
+            <input type="text" placeholder="Like Computer Skills category" size="30">
+            <ul id="ul-skills">
+                <li>
+                    <input type="text" placeholder="Enter the skill name">
+                    <br>
+                    <label>Enter your level</label> <input type="number" max="100" min="0">
+                </li>
+            </ul>
+        </div>
+        <!--<input type="button" value="Add skill " onclick="addskill()">
+        <input type="button" value="Enter new skill category" onclick="addNewSkillcategory() ">-->
+        <button type="button" (click)="addskill()">Add skill</button>
+        <button type="button" (click)="addNewSkillcategory()">Enter new skill category</button>
+    </fieldset>
+</section>

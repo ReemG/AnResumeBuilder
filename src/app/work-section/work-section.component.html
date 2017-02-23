@@ -1,0 +1,28 @@
+<section>
+    <fieldset>
+        <legend>Enter your work experience:</legend>
+        <div id="workdetails">
+            <label>Enter the work start time:</label>
+            <input type="time">
+            <br>
+            <label>Enter the work end time:</label>
+            <input type="time">
+            <br>
+            <input type="text" placeholder="Enter the work location">
+            <br>
+            <input type="text" placeholder="Enter your job name">
+            <br>
+            <input type="text" placeholder="Enter the company name">
+            <br>
+            <label>Tasks/Achievments:</label>
+            <br>
+            <ul id="task1-ul">
+                <li><input type="text" placeholder="Enter your task/achievement"></li>
+            </ul>
+        </div>
+        <!--<input type="button" value="Add Tasks/Achivements" onclick="addtasks() ">
+        <input type="button" value="Enter new work" onclick="addNewWork() ">-->
+        <button type="button" (click)="addtasks()">Add Tasks/Achivements</button>
+        <button type="button" (click)="addNewWork()">Enter new work</button>
+    </fieldset>
+</section>

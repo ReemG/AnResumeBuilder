@@ -1,0 +1,26 @@
+<section>
+    <fieldset>
+        <legend>Enter your education:</legend>
+        <div id="education-detail">
+            <label>Enter the education start time:</label>
+            <input type="time">
+            <br>
+            <label>Enter the education end time:</label>
+            <input type="time">
+            <br>
+            <input type="text" placeholder="Enter the education ">
+            <br>
+            <input type="text" placeholder="Enter the faculty and university name" size="30">
+            <br>
+            <label>Courses:</label>
+            <br>
+            <ul id="courses-ul">
+                <li><input type="text" placeholder="Enter the course name"></li>
+            </ul>
+        </div>
+        <!--<input type="button" value="Add course " onclick="addcourses()">-->
+        <button type="button" (click)="addcourses()">Add course</button>
+        <!--<input type="button" value="Enter new education" onclick="addNewEducation() ">-->
+        <button type="button" (click)="addNewEducation()">Enter new education</button>
+    </fieldset>
+</section>
