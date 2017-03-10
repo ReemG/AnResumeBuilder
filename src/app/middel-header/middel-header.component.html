@@ -1,7 +1,8 @@
 <div>
-    <fieldset action="upload-script-url" method="post" enctype="multipart/form-data">
+    <form action="upload-script-url" method="post" enctype="multipart/form-data">
         <legend>Personal photo:</legend>
-        <img id="uploadPreview" style="width: 100px; height: 100px;" />
-        <input id="uploadImage" type="file" name="myPhoto" onchange="PreviewImage();" />
-    </fieldset>
+        <img ng-image-upload id="uploadPreview" style="width: 100px; height: 100px;" />
+        <br>
+        <input id="uploadImage" type="file" name="myPhoto" />
+    </form>
 </div>

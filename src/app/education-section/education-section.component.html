@@ -1,26 +1,26 @@
-<section>
-    <fieldset>
+<section *ngFor="let form of forms">
+    <form [formGroup]="form">
         <legend>Enter your education:</legend>
-        <div id="education-detail">
-            <label>Enter the education start time:</label>
-            <input type="time">
-            <br>
-            <label>Enter the education end time:</label>
-            <input type="time">
-            <br>
-            <input type="text" placeholder="Enter the education ">
-            <br>
-            <input type="text" placeholder="Enter the faculty and university name" size="30">
-            <br>
-            <label>Courses:</label>
-            <br>
-            <ul id="courses-ul">
-                <li><input type="text" placeholder="Enter the course name"></li>
+        <label>Enter the education start time:</label>
+        <input formControlName="starttime" type="time">
+        <br>
+        <label>Enter the education end time:</label>
+        <input formControlName="endtime" type="time">
+        <br>
+        <input formControlName="educationName" type="text" placeholder="The education ">
+        <br>
+        <input formControlName="unviName" type="text" placeholder="The faculty and university name" size="30">
+        <br>
+        <label>Courses:</label>
+        <br>
+        <div formArrayName="formArray">
+            <ul *ngFor="let field of form.controls.formArray.controls; let i=index">
+                <li [formGroupName]="i">
+                    <input formControlName="coursename" type="text" placeholder="Enter the course name">
+                </li>
             </ul>
+            <button type="submit" (click)="addcourses(form)">Add Course</button>
         </div>
-        <!--<input type="button" value="Add course " onclick="addcourses()">-->
-        <button type="button" (click)="addcourses()">Add course</button>
-        <!--<input type="button" value="Enter new education" onclick="addNewEducation() ">-->
         <button type="button" (click)="addNewEducation()">Enter new education</button>
-    </fieldset>
+    </form>
 </section>

@@ -1,0 +1,130 @@
+<header>
+    <div id="leftheader">
+        <div id="headerdot"></div>
+        <h1>{{model.header.leftInformation.personalName}}</h1>
+        <p>{{model.header.leftInformation.carrer}}</p>
+        <p>{{model.header.leftInformation.summary}}</p>
+    </div>
+    <div id="middelheader">
+        <img src="resume img/reem.png">
+    </div>
+    <div id="rightheader">
+        <ul>
+            <li>
+                <img src="resume img/mail.png">
+                <p>{{model.header.rightInformation.email}}</p>
+            </li>
+            <li>
+                <img src="resume img/phone.png">
+                <p>{{model.header.rightInformation.phone}}</p>
+            </li>
+            <li>
+                <img src="resume img/earth.png">
+                <p>{{model.header.rightInformation.country}}</p>
+            </li>
+            <li>
+                <img src="resume img/git.png">
+                <address>
+                        <a href="http://www.github.com/ReemG">{{model.header.rightInformation.github}}</a>
+                 </address>
+            </li>
+            <li *ngFor="let  newcontact of model.header.rightInformation.newcontacts">
+                <img src="resume img/git.png">
+                <address>
+                        <a href="http://www.github.com/ReemG">{{newcontact}}</a>
+                 </address>
+            </li>
+        </ul>
+    </div>
+</header>
+<main>
+    <section id="leftcontent">
+        <section>
+            <h2>Work Experience</h2>
+            <article *ngFor="let work of works">
+                <div class="maindot"></div>-->
+                <time class="start-time" datetime="2015-11">{{work.starttime}} -</time>
+                <time class="end-time" datetime="2016-02"> {{work.endtime}}</time>
+                <p class="place">{{work.location}}</p>
+                <h3>{{work.jobname}}</h3>
+                <h4>{{work.companyname}}</h4>
+                <h5>Tasks/Achievments:</h5>
+                <ul id="ul-work" *ngFor="let achieve of work.achievements">
+                    <li>{{achieve.achievement}}</li>
+                </ul>
+            </article>
+        </section>
+    </section>
+    <!--<section>
+            <article>
+                <h2>Education</h2>
+                <div class="maindot"></div>
+                <time class="start-time" datetime="2011-09">09/2011-</time>
+                <time class="end-time" datetime="2015-07">07/2015</time>
+                <h3>Software Developer</h3>
+                <h4>Faculty of Computers and Information Cairo University</h4>
+                <h5>Courses</h5>
+                <ul id="ul-Education1">
+                    <li>Majored in Information Technology</li>
+                    <li>Minored in Decision Support</li>
+                </ul>
+
+                <h5>Other courses</h5>
+                <ul class="ul-Education2">
+                    <li>CCNA</li>
+                    <li>Android</li>
+                    <li>Arduino</li>
+                    <li>Windows Azure</li>
+                    <li>Cloud Computing</li>
+                </ul>
+            </article>
+        </section>
+        <section>
+            <article>
+                <h2>Projects</h2>
+                <div class="maindot"></div>
+                <h3>Digital Watermarking</h3>
+                <ul class="ul-project1">
+                    <li>Java application that can hide Text inside a RGB picture using Least Significant Bit (LSB) Algorithm and encrypt it with password.
+                    </li>
+                </ul>
+            </article>
+        </section>
+   
+    <section id="rightcontent">
+        <section>
+            <article>
+                <h2>Skills & Competences</h2>
+                <div class="maindot"></div>
+                <h3>Computer Skills</h3>
+                <ul class="ul-skills">
+                    <li>
+                        <p>java</p>
+                        <meter value="90" max="100"></meter>
+                    </li>
+                </ul>
+                <div class="maindot"></div>
+                <h3>Personal Skills</h3>
+                <ul class="ul-skills">
+                    <li>
+                        <p>Communication Skills</p>
+                        <meter value="90" max="100"></meter>
+                    </li>
+                </ul>
+            </article>
+        </section>
+        <section>
+            <article>
+                <h2 id="h2-language">Languages</h2>
+                <h4 class="h4-language">English</h4>
+                <p id="english-level">Excellent</p>
+            </article>
+        </section>
+        <section>
+            <article>
+                <h2>Interests</h2>
+                <p>Reading and teaching.</p>
+            </article>
+        </section>
+    </section>-->
+</main>

@@ -1,11 +1,11 @@
 <div>
-    <fieldset id="personal-info">
+    <form>
         <legend>Personal information:</legend>
-        <input type="text" placeholder="Enter Your Name" name="personal-name">
+        <input [(ngModel)]="leftInformation.personalName" type="text" placeholder="Enter Your Name" name="personalname">
         <br>
-        <input type="text" placeholder="Enter Your carrer title" name="carrer-title">
+        <input [(ngModel)]="leftInformation.carrer" type="text" placeholder="Enter Your carrer title" name="carrer">
         <br>
-        <input type="text" placeholder="Enter summary about you">
+        <input [(ngModel)]="leftInformation.summary" type="text" placeholder="Enter summary about you" name="summary">
         <br>
-    </fieldset>
+    </form>
 </div>

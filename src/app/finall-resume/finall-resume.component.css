@@ -1,0 +1,412 @@
+body {
+    margin: 0px auto;
+}
+
+.container-fluid {
+    padding-left: 0px;
+}
+
+header {
+    padding: 0px;
+    border-bottom: 1px solid darkslategray;
+    margin: 0px auto;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+#leftheader {
+    width: 40%;
+}
+
+#middelheader {
+    width: 30%;
+}
+
+#rightheader {
+    width: 30%;
+}
+
+#leftheader h1 {
+    display: inline;
+    font-size: 3.0em;
+    margin: 10px 0px 2px 5px;
+    font-weight: bold;
+    color: black;
+    font-family: initial;
+}
+
+#leftheader p {
+    padding-left: 25px;
+    font-family: initial;
+    font-size: x-large;
+    color: teal;
+    margin: 2px 0px 15px 25px;
+}
+
+#headerdot {
+    height: 70px;
+    width: 40px;
+    background-color: teal;
+    display: inline-block;
+    position: relative;
+    top: 30px;
+}
+
+#middelheader img {
+    display: inline-block;
+    padding-left: 0px;
+    padding-right: 0px;
+    border-radius: 50%;
+    margin-top: 5px;
+    height: 170px;
+    border: 5px solid lightslategray;
+    width: 55%;
+}
+
+#rightheader ul {
+    height: 150px;
+    text-align: right;
+    list-style: none;
+    padding-top: 15px;
+    margin-bottom: 0px;
+}
+
+#rightheader li {
+    margin-bottom: 15px;
+    margin-right: 10px;
+}
+
+#rightheader ul li img {
+    width: 20%;
+    height: 25px;
+    float: right;
+    border: 0px;
+    margin-top: 0px;
+}
+
+#rightheaderr ul li p {
+    margin-bottom: 10px;
+    font-family: initial;
+    color: black;
+    font-size: initial;
+}
+
+address {
+    display: inline;
+    margin-left: 15px;
+}
+
+address a {
+    color: indigo;
+    text-decoration: underline;
+}
+
+main {
+    width: 100%;
+    margin: 0px auto;
+    padding: 5px 0px;
+}
+
+.maindot {
+    height: 60px;
+    width: 40px;
+    background-color: darkslategray;
+    display: inline-block;
+    position: absolute;
+    overflow: hidden;
+}
+
+#leftcontent {
+    margin-bottom: 50px;
+    overflow: hidden;
+    padding-left: 0px;
+    width: 50%;
+    box-sizing: border-box;
+}
+
+#rightcontent {
+    overflow: hidden;
+    width: 50%;
+}
+
+#leftcontent h2 {
+    margin-left: 50px;
+    font-size: xx-large;
+    font-family: sans-serif;
+    margin-bottom: 15px;
+    margin-top: 15px;
+    color: black;
+    font-weight: bold;
+}
+
+#rightcontent h2 {
+    margin-left: 33px;
+    font-size: xx-large;
+    font-family: sans-serif;
+    margin-bottom: 15px;
+    margin-top: 15px;
+    color: black;
+    font-weight: bold;
+}
+
+#rightcontent h3 {
+    margin-left: 45px;
+}
+
+#rightcontent .maindot {
+    height: 60px;
+    width: 35px;
+    background-color: darkslategray;
+    display: none;
+    position: absolute;
+    overflow: hidden;
+}
+
+h3 {
+    margin: 2px 0px 0px 55px;
+    font-size: x-large;
+    color: black;
+    font-family: initial;
+    font-weight: bold;
+}
+
+h4 {
+    margin: 2px 0px 10px 55px;
+    font-weight: normal;
+    font-size: x-large;
+    color: black;
+    font-family: -webkit-body;
+}
+
+h5 {
+    margin: 10px 0px 0px 55px;
+    font-style: italic;
+    color: darkslategrey;
+    font-size: medium;
+}
+
+p {
+    margin: 0px 0px 0px 45px;
+    font-size: initial;
+    color: black;
+    font-family: initial;
+}
+
+.start-time {
+    display: inline;
+    margin-left: 30px;
+    font-size: medium;
+    color: darkslategray;
+    font-style: italic;
+}
+
+.end-time {
+    display: inline;
+    font-size: medium;
+    color: darkslategray;
+    font-style: italic;
+}
+
+.place {
+    margin-right: 90px;
+    color: darkslategrey;
+    float: right;
+    font-style: italic;
+}
+
+#ul-Education1 {
+    margin-top: 3px;
+    margin-bottom: 0px;
+    margin-left: 50px;
+    color: black;
+    font-family: initial;
+    font-size: initial;
+}
+
+.ul-Education2 {
+    margin: 3px 0px 30px 50px;
+    margin-left: 50px;
+    color: black;
+    font-family: initial;
+    font-size: initial;
+}
+
+.ul-project1 {
+    margin-top: 3px;
+    margin-left: 50px;
+    color: black;
+    font-size: medium;
+    font-family: initial;
+}
+
+#english-level {
+    margin: 0px 0px 50px 45px;
+    display: inline;
+    font-size: medium;
+    color: darkslategrey;
+}
+
+#arabic-level {
+    margin: 0px 70px 50px 90px;
+    display: inline;
+    font-size: medium;
+    color: darkslategrey;
+}
+
+.h2-language {
+    margin-left: 25px;
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+
+.h4-language {
+    display: inline;
+    margin: 0px 50px 0px 45px;
+    font-weight: normal;
+    font-size: large;
+}
+
+.ul-skills {
+    margin-top: 3px;
+    list-style: none;
+    margin-bottom: 30px;
+}
+
+#ul-work {
+    margin: 3px 0px 15px 32px;
+    color: black;
+    font-family: initial;
+    font-size: medium;
+}
+
+.ul-skills li p {
+    display: inline;
+    margin: 5px 0px 0px 15px;
+    text-align: right;
+    color: black;
+    font-size: medium;
+    font-family: initial;
+}
+
+meter {
+    float: right;
+    width: 60%;
+    margin-right: 20px;
+}
+
+meter::-webkit-meter-optimum-value {
+    background: darkslategray;
+}
+
+@media(max-width:992px) {
+    header h1 {
+        font-size: xx-large;
+    }
+    header p {
+        padding-left: 25px;
+        font-size: large;
+    }
+    #headerdot {
+        height: 60px;
+        width: 40px;
+    }
+    header img {
+        width: 80%;
+        margin-bottom: 5px;
+    }
+    header ul {
+        height: auto;
+        text-align: right;
+        padding-top: 30px;
+        padding-bottom: 10px;
+    }
+    header ul li img {
+        width: 15%;
+        height: 20px;
+    }
+    header ul li p {
+        font-size: initial;
+    }
+    .maindot {
+        height: 60px;
+        width: 50px;
+    }
+    #leftcontent h2 {
+        font-size: x-large;
+    }
+    #rightcontent h2 {
+        font-size: x-large;
+    }
+    .h4-language {
+        font-size: medium;
+        margin: 0px 0px 0px 45px;
+    }
+    h3 {
+        font-size: medium;
+    }
+    h4 {
+        font-size: medium;
+    }
+}
+
+@media(max-width:768px) {
+    header h1 {
+        font-size: x-large;
+    }
+    header p {
+        font-size: large;
+        margin-bottom: 0px
+    }
+    header img {
+        height: 140px;
+        width: 40%;
+        margin-left: 20px;
+    }
+    header ul {
+        height: auto;
+        text-align: left;
+        padding-top: 0px;
+        padding-left: 0px;
+    }
+    header ul li img {
+        width: 10%;
+        height: 20px;
+        float: left;
+        margin-left: 0px;
+    }
+    header ul li p {
+        margin-left: 35px;
+        width: 100%;
+        display: block;
+        font-size: medium;
+    }
+    header address {
+        margin-left: 0px;
+    }
+    header address a {
+        display: inline;
+        padding-left: 5px;
+    }
+    #leftcontent {
+        width: 100%;
+        margin-bottom: 0px;
+    }
+    #rightcontent {
+        width: 100%;
+        margin-bottom: 50px;
+    }
+    #rightcontent {
+        margin-top: 0px;
+    }
+    .ul-Education2 {
+        margin-bottom: 15px;
+    }
+    #rightcontent .maindot {
+        height: 60px;
+        width: 35px;
+        background-color: darkslategray;
+        display: inline-block;
+        position: absolute;
+        overflow: hidden;
+    }
+}

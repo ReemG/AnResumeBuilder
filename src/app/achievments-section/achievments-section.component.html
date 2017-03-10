@@ -1,10 +1,13 @@
-<section>
-    <fieldset>
+<section *ngFor="let form of forms">
+    <form [formGroup]="form">
         <legend>Achievments</legend>
-        <div id="achievements">
-            <input type="text" placeholder="Enter your achievement" size="30">
+        <div formArrayName="formArray">
+            <div *ngFor="let field of form.controls.formArray.controls; let i=index">
+                <div [formGroupName]="i">
+                    <input formControlName="achievement" type="text" placeholder="Your achievement" size="30">
+                </div>
+            </div>
+            <button type="button" (click)="addachivement(form) ">Add Achievment</button>
         </div>
-        <!--<input type="button" value="Add Achievment " onclick="addachivement()">-->
-        <button type="button" (click)="addachivement()">Add Achievment</button>
-    </fieldset>
+    </form>
 </section>

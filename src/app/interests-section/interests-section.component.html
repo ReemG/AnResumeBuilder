@@ -1,14 +1,13 @@
-<section>
-    <fieldset>
+<section *ngFor="let form of forms">
+    <form [formGroup]="form">
         <legend>Interests</legend>
-        <div id="Interests">
-            <ul id="interest-ul">
-                <li>
-                    <input type="text" placeholder="Enter your interest" size="30">
+        <div formArrayName="formArray">
+            <ul *ngFor="let field of form.controls.formArray.controls; let i=index">
+                <li [formGroupName]="i">
+                    <input formControlName="interest" type="text" placeholder="Enter your interest" size="30">
                 </li>
             </ul>
         </div>
-        <!--<input type="button" value="Add Interest " onclick="addinterest()">-->
-        <button type="button" (click)="addinterest()">Add Interest</button>
-    </fieldset>
+        <button type="button" (click)="addinterest(form)">Add Interest</button>
+    </form>
 </section>

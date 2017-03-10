@@ -1,28 +1,31 @@
-<section>
-    <fieldset>
+<section *ngFor="let form of forms">
+    <form [formGroup]="form">
         <legend>Enter your work experience:</legend>
-        <div id="workdetails">
-            <label>Enter the work start time:</label>
-            <input type="time">
-            <br>
-            <label>Enter the work end time:</label>
-            <input type="time">
-            <br>
-            <input type="text" placeholder="Enter the work location">
-            <br>
-            <input type="text" placeholder="Enter your job name">
-            <br>
-            <input type="text" placeholder="Enter the company name">
-            <br>
-            <label>Tasks/Achievments:</label>
-            <br>
-            <ul id="task1-ul">
-                <li><input type="text" placeholder="Enter your task/achievement"></li>
+        <label>Enter the work start time:</label>
+        <input formControlName="starttime" type="date">
+        <br>
+        <label>Enter the work end time:</label>
+        <input formControlName="endtime" type="date">
+        <br>
+        <input formControlName="location" type="text" placeholder="The work location">
+        <br>
+        <input formControlName="jobname" type="text" placeholder="Your job name">
+        <br>
+        <input formControlName="companyname" type="text" placeholder="The company name">
+        <br>
+        <label>Tasks/Achievments:</label>
+        <br>
+        <div formArrayName="formArray">
+            <ul *ngFor="let field of form.controls.formArray.controls; let i=index">
+                <li [formGroupName]="i">
+                    <input type="text" formControlName="achievement" placeholder="Your tasks/achievements">
+                </li>
             </ul>
+            <button type="button" (click)="addTask(form)">Add tasks/achivements</button>
         </div>
-        <!--<input type="button" value="Add Tasks/Achivements" onclick="addtasks() ">
-        <input type="button" value="Enter new work" onclick="addNewWork() ">-->
-        <button type="button" (click)="addtasks()">Add Tasks/Achivements</button>
-        <button type="button" (click)="addNewWork()">Enter new work</button>
-    </fieldset>
+
+    </form>
+
 </section>
+<button type="button " (click)="addNewWork() ">Add new work</button>
+<button type="button " (click)="getData() ">Save All</button>

@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
@@ -19,6 +19,19 @@ import { AchievmentsSectionComponent } from './achievments-section/achievments-s
 import { LanguagesSectionComponent } from './languages-section/languages-section.component';
 import { InterestsSectionComponent } from './interests-section/interests-section.component';
 
+import {TaskService} from './task.service';
+import {Model} from './Model';
+import {RouterModule , Routes } from '@angular/router';
+import { SaveAllComponent } from './save-all/save-all.component';
+import { FinallResumeComponent } from './finall-resume/finall-resume.component';
+//import {WebStorageModule, LocalStorageService} from "angular2-localstorage";
+
+const appRoutes :Routes = [
+  {path: 'save' , component:FinallResumeComponent},
+  {path:'index', component:MaincontentComponent},
+  {path:'',redirectTo: '/index',pathMatch: 'full'}
+];
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,14 +48,21 @@ import { InterestsSectionComponent } from './interests-section/interests-section
     SkillsSectionComponent,
     AchievmentsSectionComponent,
     LanguagesSectionComponent,
-    InterestsSectionComponent
+    InterestsSectionComponent,
+    SaveAllComponent,
+    FinallResumeComponent
   ],
   imports: [
+    RouterModule.forRoot(appRoutes),
+    ReactiveFormsModule,
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+  //WebStorageModule
   ],
-  providers: [],
+  providers: [TaskService
+    //LocalStorageService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

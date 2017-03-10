@@ -1,17 +1,21 @@
-<div class="col-xs-12 col-md-5 col-sm-5">
-    <fieldset id="contactform">
-        <legend>Contact information: </legend>
-        <div id="contactinput">
-            <input type="email" placeholder="Enter your email">
-            <br>
-            <input type="number" placeholder="Enter your phone number">
-            <br>
-            <input type="text" placeholder="Enter your country">
-            <br>
-            <input type="text" placeholder="Enter your GitHub">
-            <br>
+<section *ngFor="let form of forms">
+    <form [formGroup]="form">
+        <legend>Contact information:</legend>
+        <input formControlName="email" [(ngModel)]="rightInformation.email" type="email" placeholder="Email">
+        <br>
+        <input formControlName="phone" [(ngModel)]="rightInformation.phone" type="number" placeholder="Phone number">
+        <br>
+        <input formControlName="country" [(ngModel)]="rightInformation.country" type="text" placeholder="Country">
+        <br>
+        <input formControlName="github" [(ngModel)]="rightInformation.github" type="text" placeholder="GitHub">
+        <br>
+        <div formArrayName="formArray">
+            <div *ngFor="let field of form.controls.formArray.controls; let i=index">
+                <div [formGroupName]="i">
+                    <input formControlName="newcontact" type="text" placeholder="New contact">
+                </div>
+            </div>
+            <button type="button" (click)="addNewContact(form)">Add new contact</button>
         </div>
-        <!--<input type="button" id="add " value="Add new contact" onclick="addNewContact()">-->
-        <button type="button" (click)="aaddNewContact()">Add new contact</button>
-    </fieldset>
-</div>
+    </form>
+</section>
