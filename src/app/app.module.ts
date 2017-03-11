@@ -24,6 +24,7 @@ import {Model} from './Model';
 import {RouterModule , Routes } from '@angular/router';
 import { SaveAllComponent } from './save-all/save-all.component';
 import { FinallResumeComponent } from './finall-resume/finall-resume.component';
+import { CoursesSectionComponent } from './courses-section/courses-section.component';
 //import {WebStorageModule, LocalStorageService} from "angular2-localstorage";
 
 const appRoutes :Routes = [
@@ -50,7 +51,8 @@ const appRoutes :Routes = [
     LanguagesSectionComponent,
     InterestsSectionComponent,
     SaveAllComponent,
-    FinallResumeComponent
+    FinallResumeComponent,
+    CoursesSectionComponent
   ],
   imports: [
     RouterModule.forRoot(appRoutes),

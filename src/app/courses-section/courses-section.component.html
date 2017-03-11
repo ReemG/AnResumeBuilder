@@ -1,14 +1,13 @@
 <section *ngFor="let form of forms">
     <form [formGroup]="form">
-        <legend>Languages</legend>
+        <legend>Courses</legend>
         <div formArrayName="formArray">
             <div *ngFor="let field of form.controls.formArray.controls; let i=index">
                 <div [formGroupName]="i">
-                    <input formControlName="newlanguagename" type="text" placeholder="The language" size="30">
-                    <input formControlName="newlevel" type="text" placeholder="Your level">
+                    <input formControlName="course" type="text" placeholder="Course name" size="30">
                 </div>
             </div>
-            <button type="button" (click)="addlanguage(form)">Add language</button>
+            <button type="button" (click)="addcourse(form) ">Add Course</button>
         </div>
     </form>
 </section>

@@ -22,6 +22,10 @@ header {
     width: 30%;
 }
 
+.couser-ul {
+    margin-left: 25px;
+}
+
 #rightheader {
     width: 30%;
 }
@@ -162,6 +166,14 @@ main {
     overflow: hidden;
 }
 
+artical {
+    margin-bottom: 20px;
+}
+
+section {
+    margin-bottom: 30px;
+}
+
 h3 {
     margin: 2px 0px 0px 55px;
     font-size: x-large;
@@ -194,7 +206,7 @@ p {
 
 .start-time {
     display: inline;
-    margin-left: 30px;
+    margin-left: 55px;
     font-size: medium;
     color: darkslategray;
     font-style: italic;
@@ -239,16 +251,9 @@ p {
     font-family: initial;
 }
 
-#english-level {
-    margin: 0px 0px 50px 45px;
-    display: inline;
-    font-size: medium;
-    color: darkslategrey;
-}
-
-#arabic-level {
-    margin: 0px 70px 50px 90px;
-    display: inline;
+.level {
+    margin: 0px 0px 10px 38px;
+    display: block;
     font-size: medium;
     color: darkslategrey;
 }
@@ -260,20 +265,32 @@ p {
 }
 
 .h4-language {
-    display: inline;
-    margin: 0px 50px 0px 45px;
+    display: block;
+    margin: 0px 50px 0px 38px;
     font-weight: normal;
     font-size: large;
+}
+
+.p-interest {
+    font-size: large;
+    margin-left: 38px;
+    margin-bottom: 10px;
 }
 
 .ul-skills {
     margin-top: 3px;
     list-style: none;
-    margin-bottom: 30px;
+    margin-bottom: 5px;
+}
+
+.p-achive {
+    margin-bottom: 10px;
+    font-size: x-large;
+    margin-left: 37px;
 }
 
 #ul-work {
-    margin: 3px 0px 15px 32px;
+    margin: 3px 0px 5px 32px;
     color: black;
     font-family: initial;
     font-size: medium;
@@ -329,7 +346,7 @@ meter::-webkit-meter-optimum-value {
     }
     .maindot {
         height: 60px;
-        width: 50px;
+        width: 40px;
     }
     #leftcontent h2 {
         font-size: x-large;

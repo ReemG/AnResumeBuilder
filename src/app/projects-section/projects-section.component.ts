@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import {TaskService} from '../task.service';
 
 @Component({
   selector: 'app-projects-section',
@@ -9,7 +10,8 @@ import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class ProjectsSectionComponent implements OnInit {
 
   forms: FormGroup[] = [];
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder,
+              private taskSevice: TaskService) {
   }
 
   ngOnInit() {
@@ -32,4 +34,11 @@ export class ProjectsSectionComponent implements OnInit {
     this.addrole(form);
     this.forms.push(form);
   }
+  getData(): void{
+     for(const form of this.forms){
+       if(form.value!== ""){
+       this.taskSevice.addProj(form.value);
+       }
+     }
+   }
 }

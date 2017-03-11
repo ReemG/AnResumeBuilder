@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import {TaskService} from '../task.service';
 
 @Component({
   selector: 'app-education-section',
@@ -9,8 +10,9 @@ import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class EducationSectionComponent implements OnInit {
 
   forms: FormGroup[] = [];
-
-  constructor(private fb: FormBuilder) {
+  
+  constructor(private fb: FormBuilder,
+              private taskSevice: TaskService) {
   }
 
   ngOnInit() {
@@ -35,5 +37,11 @@ export class EducationSectionComponent implements OnInit {
     this.addcourses(form);
     this.forms.push(form);
   }
-
+  getData(): void{
+     for(const form of this.forms){
+       if(form.value!== ""){
+       this.taskSevice.addEdu(form.value);
+       }
+     }
+   }
 }

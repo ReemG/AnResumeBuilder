@@ -6,13 +6,14 @@
         <div formArrayName="formArray">
             <ul *ngFor="let field of form.controls.formArray.controls; let i=index">
                 <li [formGroupName]="i">
-                    <input formControlName="skillname" type="text" placeholder="Enter the skill name">
+                    <input formControlName="skillname" type="text" placeholder="The skill name">
                     <label>Enter the skill level</label>
                     <input formControlName="skill_level" type="number" max="100" min="0">
                 </li>
             </ul>
             <button type="button" (click)="addSkill(form)">Add skill</button>
         </div>
-        <button type="button" (click)="addNewSkillcategory()">Enter new skill category</button>
     </form>
 </section>
+<button type="button" (click)="addNewSkillcategory()">Add new skill category</button>
+<button type="button " (click)="getData() ">Save</button>

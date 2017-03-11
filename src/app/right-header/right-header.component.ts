@@ -11,7 +11,7 @@ import {TaskService} from '../task.service';
 export class RightHeaderComponent implements OnInit {
    forms: FormGroup[] = [];
    rightInformation : RightInformation;
-  constructor(private fb: FormBuilder,
+     constructor(private fb: FormBuilder,
               private taskSevice: TaskService) {
   this.rightInformation = this.taskSevice.model.header.rightInformation;
                }
@@ -27,6 +27,13 @@ export class RightHeaderComponent implements OnInit {
     }));
     let newContact = arrayControl.at(arrayControl.length-2);
     if(newContact) {
+      //console.log(typeof newContact.value);
+      //console.log(typeof newContact.value.newcontact);
+      //console.log(typeof newContact.value.newcontact);
+      if((newContact.value.newcontact).includes("linkedin"))
+         {this.rightInformation.photo.push("in2.png");}
+      else if((newContact.value.newcontact).includes("gmail"))
+         {this.rightInformation.photo.push("g2.png");}
      this.rightInformation.newcontacts.push(newContact.value.newcontact);
     }
     

@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import {TaskService} from '../task.service';
-import {Work} from '../work';
 
 @Component({
   selector: 'app-work-section',
@@ -11,21 +10,16 @@ import {Work} from '../work';
 export class WorkSectionComponent implements OnInit {
 
   forms: FormGroup[] = [];
-  work : Work = new Work();
-
   constructor(private fb: FormBuilder,
               private taskSevice: TaskService) {
   }
-
   ngOnInit() {
     this.addNewWork();
   }
-
-  
   addTask(form): void {
     const arrayControl = <FormArray>form.controls['formArray'];
     arrayControl.push(this.fb.group({
-      achievement: '',
+      task: '',
     }));
   }
   

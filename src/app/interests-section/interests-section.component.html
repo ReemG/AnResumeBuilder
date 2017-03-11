@@ -4,10 +4,11 @@
         <div formArrayName="formArray">
             <ul *ngFor="let field of form.controls.formArray.controls; let i=index">
                 <li [formGroupName]="i">
-                    <input formControlName="interest" type="text" placeholder="Enter your interest" size="30">
+                    <input formControlName="interest" type="text" placeholder="Your interest" size="30">
                 </li>
             </ul>
         </div>
         <button type="button" (click)="addinterest(form)">Add Interest</button>
     </form>
 </section>
+<button type="button " (click)="getData() ">Save</button>

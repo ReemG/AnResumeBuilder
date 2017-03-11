@@ -21,24 +21,74 @@ export class RightInformation{
     country : string;
     github : string;
     newcontacts :string[] = [];
+    photo :string[] = [];
 }
 export class Main{
     leftContent :LeftContent = new LeftContent();
-    //rightContent :RightContent = new RightContent();
+    rightContent :RightContent = new RightContent();
 }
 export class LeftContent{
-    //works : Works = new Works();
-    //educations : Educations = new Educations();
-    //projects : Projects = new Projects();
+    works : Work = new Work();
+    educations : Education = new Education();
+    projects : Projects = new Projects();
 }
-export class RightContent{}
-// export class Works{
-//     starttime : string;
-//     endtime : string;
-//     location : string;
-//     jobname :string ;
-//     companyname : string;
-//     achievements : string[] = [];
-// }
-export class Educations{}
-export class Projects{}
+export class RightContent{
+    skills : Skillcatagory = new Skillcatagory();
+    courses : Courses =new Courses();
+    achivement : Achievements = new Achievements();
+    languages : Languages = new Languages();
+    interests : Interests = new Interests();
+}
+
+export class Work{
+    starttime : string;
+    endtime : string;
+    location : string;
+    jobname :string ;
+    companyname : string;
+    tasks : Tasks[] = [];
+}
+export class Tasks{
+    task:string;
+}
+export class Education{
+    starttime : string;
+    endtime : string;
+    educationName : string;
+    unviName :string ;
+    educourses : EduCourses[] = [];
+}
+export class EduCourses{
+    educourse:string;
+}
+export class Projects{
+    projectname:string;
+    roles:Roles[]=[];
+}
+export class Roles{
+    role:string;
+}
+export class Skillcatagory{
+    skillcategory : string;
+    skills :Skills[]=[];
+}
+export class Skills{
+    name:string;
+    level:number;
+}
+export class Courses{
+    course:string[];
+}
+export class Achievements{
+    achive :string[];
+}
+export class Languages{
+    language : Language[]=[];
+}
+export class Language {
+    name:string;
+    level:string;
+}
+export class Interests{
+    interest :string[];
+}

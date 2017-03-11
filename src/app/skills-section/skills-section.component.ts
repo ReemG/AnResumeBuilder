@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { TaskService } from '../task.service';
 
 @Component({
   selector: 'app-skills-section',
@@ -7,34 +8,42 @@ import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./skills-section.component.css']
 })
 export class SkillsSectionComponent implements OnInit {
-    forms: FormGroup[] = [];
+  forms: FormGroup[] = [];
 
-  constructor(private fb: FormBuilder) {
-    
+  constructor(private fb: FormBuilder,
+              private taskSevice: TaskService) {
+
   }
 
   ngOnInit() {
     this.addNewSkillcategory();
   }
 
-  
-  addSkill (form): void {
+
+  addSkill(form): void {
     const arrayControl = <FormArray>form.controls['formArray'];
     arrayControl.push(this.fb.group({
       skillname: '',
-      skill_level:'',
-      
+      skill_level: '',
+
     }));
   }
-  
+
   addNewSkillcategory = function () {
     var form = this.fb.group({
-      skillcategory:'',
+      skillcategory: '',
       formArray: this.fb.array([])
     });
- 
+
     this.addSkill(form);
     this.forms.push(form);
+  }
+  getData(): void {
+    for (const form of this.forms) {
+      if (form.value !== "") {
+        this.taskSevice.addSkill(form.value);
+      }
+    }
   }
 
 }

@@ -2,10 +2,10 @@
     <form [formGroup]="form">
         <legend>Enter your education:</legend>
         <label>Enter the education start time:</label>
-        <input formControlName="starttime" type="time">
+        <input formControlName="starttime" type="date">
         <br>
         <label>Enter the education end time:</label>
-        <input formControlName="endtime" type="time">
+        <input formControlName="endtime" type="date">
         <br>
         <input formControlName="educationName" type="text" placeholder="The education ">
         <br>
@@ -16,11 +16,12 @@
         <div formArrayName="formArray">
             <ul *ngFor="let field of form.controls.formArray.controls; let i=index">
                 <li [formGroupName]="i">
-                    <input formControlName="coursename" type="text" placeholder="Enter the course name">
+                    <input formControlName="coursename" type="text" placeholder="The course name">
                 </li>
             </ul>
             <button type="submit" (click)="addcourses(form)">Add Course</button>
         </div>
-        <button type="button" (click)="addNewEducation()">Enter new education</button>
     </form>
 </section>
+<button type="button" (click)="addNewEducation()">Enter new education</button>
+<button type="button " (click)="getData() ">Save</button>

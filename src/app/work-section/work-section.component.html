@@ -18,14 +18,12 @@
         <div formArrayName="formArray">
             <ul *ngFor="let field of form.controls.formArray.controls; let i=index">
                 <li [formGroupName]="i">
-                    <input type="text" formControlName="achievement" placeholder="Your tasks/achievements">
+                    <input type="text" formControlName="task" placeholder="Your tasks/achievements">
                 </li>
             </ul>
             <button type="button" (click)="addTask(form)">Add tasks/achivements</button>
         </div>
-
     </form>
-
 </section>
 <button type="button " (click)="addNewWork() ">Add new work</button>
-<button type="button " (click)="getData() ">Save All</button>
+<button type="button " (click)="getData() ">Save</button>

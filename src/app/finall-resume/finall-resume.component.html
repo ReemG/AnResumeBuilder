@@ -25,14 +25,13 @@
             <li>
                 <img src="resume img/git.png">
                 <address>
-                        <a href="http://www.github.com/ReemG">{{model.header.rightInformation.github}}</a>
+                        <a href="http://{{model.header.rightInformation.github}}">{{model.header.rightInformation.github}}</a>
                  </address>
             </li>
             <li *ngFor="let  newcontact of model.header.rightInformation.newcontacts">
-                <img src="resume img/git.png">
-                <address>
-                        <a href="http://www.github.com/ReemG">{{newcontact}}</a>
-                 </address>
+                <!--*ngFor="let  ph of model.header.rightInformation.photo"-->
+                <div *ngFor="let  ph of model.header.rightInformation.photo"><img src="resume img/{{ph}}"></div>
+                <p>{{newcontact}}</p>
             </li>
         </ul>
     </div>
@@ -42,89 +41,93 @@
         <section>
             <h2>Work Experience</h2>
             <article *ngFor="let work of works">
-                <div class="maindot"></div>-->
+                <div class="maindot"></div>
                 <time class="start-time" datetime="2015-11">{{work.starttime}} -</time>
                 <time class="end-time" datetime="2016-02"> {{work.endtime}}</time>
                 <p class="place">{{work.location}}</p>
                 <h3>{{work.jobname}}</h3>
                 <h4>{{work.companyname}}</h4>
                 <h5>Tasks/Achievments:</h5>
-                <ul id="ul-work" *ngFor="let achieve of work.achievements">
-                    <li>{{achieve.achievement}}</li>
+                <ul id="ul-work" *ngFor="let tsk of work.tasks">
+                    <li>{{tsk.task}}</li>
+                </ul>
+            </article>
+        </section>
+
+        <section>
+            <h2>Education</h2>
+            <article *ngFor="let edu of educations">
+                <div class="maindot"></div>
+                <time class="start-time" datetime="2011-09">{{edu.starttime}} -</time>
+                <time class="end-time" datetime="2015-07"> {{edu.endtime}}</time>
+                <h3>{{edu.educationName}}</h3>
+                <h4>{{edu.unviName}}</h4>
+                <h5>Courses</h5>
+                <ul id="ul-Education1" *ngFor="let course of edu.educourses">
+                    <li>{{course.coursename}}</li>
+                </ul>
+            </article>
+        </section>
+
+        <section>
+            <h2>Projects</h2>
+            <article *ngFor="let proj of projects">
+                <div class="maindot"></div>
+                <h3>{{proj.projectname}}</h3>
+                <ul class="ul-project1" *ngFor="let role of proj.roles">
+                    <li>{{role.role}}</li>
                 </ul>
             </article>
         </section>
     </section>
-    <!--<section>
-            <article>
-                <h2>Education</h2>
-                <div class="maindot"></div>
-                <time class="start-time" datetime="2011-09">09/2011-</time>
-                <time class="end-time" datetime="2015-07">07/2015</time>
-                <h3>Software Developer</h3>
-                <h4>Faculty of Computers and Information Cairo University</h4>
-                <h5>Courses</h5>
-                <ul id="ul-Education1">
-                    <li>Majored in Information Technology</li>
-                    <li>Minored in Decision Support</li>
-                </ul>
 
-                <h5>Other courses</h5>
-                <ul class="ul-Education2">
-                    <li>CCNA</li>
-                    <li>Android</li>
-                    <li>Arduino</li>
-                    <li>Windows Azure</li>
-                    <li>Cloud Computing</li>
-                </ul>
-            </article>
-        </section>
-        <section>
-            <article>
-                <h2>Projects</h2>
-                <div class="maindot"></div>
-                <h3>Digital Watermarking</h3>
-                <ul class="ul-project1">
-                    <li>Java application that can hide Text inside a RGB picture using Least Significant Bit (LSB) Algorithm and encrypt it with password.
-                    </li>
-                </ul>
-            </article>
-        </section>
-   
     <section id="rightcontent">
         <section>
-            <article>
-                <h2>Skills & Competences</h2>
-                <div class="maindot"></div>
-                <h3>Computer Skills</h3>
-                <ul class="ul-skills">
+            <h2>Skills & Competences</h2>
+            <article *ngFor="let skill of skills">
+                <h3>{{skill.skillcategory}}</h3>
+                <ul class="ul-skills" *ngFor="let sk of skill.skills">
                     <li>
-                        <p>java</p>
-                        <meter value="90" max="100"></meter>
-                    </li>
-                </ul>
-                <div class="maindot"></div>
-                <h3>Personal Skills</h3>
-                <ul class="ul-skills">
-                    <li>
-                        <p>Communication Skills</p>
-                        <meter value="90" max="100"></meter>
+                        <p>{{sk.skillname}}</p>
+                        <meter value="{{sk.skill_level}}" max="100"></meter>
                     </li>
                 </ul>
             </article>
         </section>
         <section>
-            <article>
-                <h2 id="h2-language">Languages</h2>
-                <h4 class="h4-language">English</h4>
-                <p id="english-level">Excellent</p>
+            <h2>Courses</h2>
+            <article *ngFor="let course of courses">
+                <ul class="couser-ul" *ngFor="let crs of course.course">
+                    <li>
+                        {{crs.course}}
+                    </li>
+                </ul>
             </article>
         </section>
         <section>
-            <article>
-                <h2>Interests</h2>
-                <p>Reading and teaching.</p>
+            <h2>Achievments</h2>
+            <article *ngFor="let ach of achievements">
+                <div *ngFor="let a of ach.achive">
+                    <p class="p-achive">{{a.achievement}}</p>
+                </div>
             </article>
         </section>
-    </section>-->
+        <section>
+            <h2 id="h2-language">Languages</h2>
+            <article *ngFor="let lang of languages">
+                <div *ngFor="let Lg of lang.language">
+                    <h4 class="h4-language">{{Lg.newlanguagename}}</h4>
+                    <p class="level">{{Lg.newlevel}}</p>
+                </div>
+            </article>
+        </section>
+        <section>
+            <h2>Interests</h2>
+            <article *ngFor="let inter of Interests">
+                <div *ngFor="let in of inter.interest">
+                    <p class="p-interest">{{in.interest}}</p>
+                </div>
+            </article>
+        </section>
+    </section>
 </main>
