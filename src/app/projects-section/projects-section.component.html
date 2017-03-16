@@ -1,17 +1,20 @@
-<section *ngFor="let form of forms">
-    <form [formGroup]="form">
-        <legend>Enter your projects:</legend>
-        <input formControlName="projectname" type="text" placeholder="The project name" size="30">
-        <br>
-        <div formArrayName="formArray">
-            <ul *ngFor="let field of form.controls.formArray.controls; let i=index">
-                <li [formGroupName]="i">
-                    <input formControlName="role" type="text" placeholder="Your role in the project" size="40">
-                </li>
-            </ul>
-            <button type="button" (click)="addrole(form)">Add role</button>
-        </div>
-    </form>
+<section class="leftsections">
+    <section *ngFor="let form of forms">
+        <form [formGroup]="form">
+            <input type="image" class="deletesection" (click)="delete(form)" src="resume img/delete.png" />
+            <legend>Enter your projects:</legend>
+            <input formControlName="projectname" type="text" placeholder="The project name" size="32" (change)="getData()">
+            <br>
+            <div formArrayName="formArray">
+                <ul *ngFor="let field of form.controls.formArray.controls; let i=index">
+                    <li [formGroupName]="i">
+                        <textarea formControlName="role" ROWS=2 COLS=25 placeholder="Your role in the project" (change)="getData()"></textarea>
+                        <input type="image" class="deletefield" (click)="deleterole(form,i)" src="resume img/delete.png" />
+                    </li>
+                </ul>
+                <button type="button" (click)="addrole(form)">Add role</button>
+            </div>
+        </form>
+    </section>
+    <button type="button" (click)="addNewProject()">Enter new project</button>
 </section>
-<button type="button" (click)="addNewProject()">Enter new project</button>
-<button type="button " (click)="getData() ">Save</button>

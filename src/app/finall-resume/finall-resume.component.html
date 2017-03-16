@@ -1,44 +1,44 @@
 <header>
-    <div id="leftheader">
-        <div id="headerdot"></div>
-        <h1>{{model.header.leftInformation.personalName}}</h1>
-        <p>{{model.header.leftInformation.carrer}}</p>
-        <p>{{model.header.leftInformation.summary}}</p>
+    <div id="personalinfo" *ngFor="let Pinfo of personalinfo">
+        <div *ngIf="Pinfo.personalName" id="headerdot"></div>
+        <h1>{{Pinfo.personalName}}</h1>
+        <p>{{Pinfo.carrer}}</p>
+        <p>{{Pinfo.summary}}</p>
     </div>
-    <div id="middelheader">
-        <img src="resume img/reem.png">
+    <div *ngIf="personalphoto.personalPhoto 
+                && personalphoto.personalPhoto!=='resume img/profile.gif'" id="profilephoto">
+        <img src="{{personalphoto.personalPhoto}}">
     </div>
-    <div id="rightheader">
-        <ul>
-            <li>
+    <div id="contact">
+        <ul *ngFor="let info of contactinformation">
+            <li *ngIf="info.email">
                 <img src="resume img/mail.png">
-                <p>{{model.header.rightInformation.email}}</p>
+                <p>{{info.email}}</p>
             </li>
-            <li>
+            <li *ngIf="info.phone">
                 <img src="resume img/phone.png">
-                <p>{{model.header.rightInformation.phone}}</p>
+                <p>{{info.phone}}</p>
             </li>
-            <li>
+            <li *ngIf="info.country">
                 <img src="resume img/earth.png">
-                <p>{{model.header.rightInformation.country}}</p>
+                <p>{{info.country}}</p>
             </li>
-            <li>
+            <li *ngIf="info.github">
                 <img src="resume img/git.png">
                 <address>
-                        <a href="http://{{model.header.rightInformation.github}}">{{model.header.rightInformation.github}}</a>
+                        <a href="http://{{info.github}}">{{info.github}}</a>
                  </address>
             </li>
-            <li *ngFor="let  newcontact of model.header.rightInformation.newcontacts">
-                <!--*ngFor="let  ph of model.header.rightInformation.photo"-->
-                <div *ngFor="let  ph of model.header.rightInformation.photo"><img src="resume img/{{ph}}"></div>
-                <p>{{newcontact}}</p>
+            <li *ngFor="let newcontacts of info.newcontacts">
+                <img *ngIf="photo(newcontacts.newcontact)" src="resume img/{{photo(newcontacts.newcontact)}}">
+                <p>{{newcontacts.newcontact}}</p>
             </li>
         </ul>
     </div>
 </header>
 <main>
     <section id="leftcontent">
-        <section>
+        <section *ngIf="works.length>0 && works[0].jobname!==''">
             <h2>Work Experience</h2>
             <article *ngFor="let work of works">
                 <div class="maindot"></div>
@@ -47,14 +47,14 @@
                 <p class="place">{{work.location}}</p>
                 <h3>{{work.jobname}}</h3>
                 <h4>{{work.companyname}}</h4>
-                <h5>Tasks/Achievments:</h5>
-                <ul id="ul-work" *ngFor="let tsk of work.tasks">
-                    <li>{{tsk.task}}</li>
+                <ul id="ul-work" *ngIf="work.tasks[0].task!==null && work.tasks[0].task!==''">
+                    <h5>Tasks/Achievments:</h5>
+                    <li *ngFor="let tsk of work.tasks">{{tsk.task}}</li>
                 </ul>
             </article>
         </section>
 
-        <section>
+        <section *ngIf="educations.length>0 && educations[0].educationName!==''">
             <h2>Education</h2>
             <article *ngFor="let edu of educations">
                 <div class="maindot"></div>
@@ -62,57 +62,63 @@
                 <time class="end-time" datetime="2015-07"> {{edu.endtime}}</time>
                 <h3>{{edu.educationName}}</h3>
                 <h4>{{edu.unviName}}</h4>
-                <h5>Courses</h5>
-                <ul id="ul-Education1" *ngFor="let course of edu.educourses">
-                    <li>{{course.coursename}}</li>
+                <ul id="ul-Education" *ngIf="edu.educourses[0].coursename!==null && edu.educourses[0].coursename!==''">
+                    <h5>Courses</h5>
+                    <li *ngFor="let course of edu.educourses">{{course.coursename}}</li>
                 </ul>
             </article>
         </section>
 
-        <section>
+        <section *ngIf="projects.length>0 && projects[0].projectname!==''">
             <h2>Projects</h2>
             <article *ngFor="let proj of projects">
                 <div class="maindot"></div>
                 <h3>{{proj.projectname}}</h3>
-                <ul class="ul-project1" *ngFor="let role of proj.roles">
-                    <li>{{role.role}}</li>
+                <ul class="ul-project" *ngIf="proj.roles.length>0 && proj.roles[0].role!==''">
+                    <li *ngFor="let role of proj.roles">{{role.role}}</li>
                 </ul>
             </article>
         </section>
     </section>
 
     <section id="rightcontent">
-        <section>
+        <section *ngIf="skills.length>0 && skills[0].skills.length>0
+                    && skills[0].skills[0].skillname!==''">
             <h2>Skills & Competences</h2>
             <article *ngFor="let skill of skills">
+                <div class="maindot"></div>
                 <h3>{{skill.skillcategory}}</h3>
-                <ul class="ul-skills" *ngFor="let sk of skill.skills">
-                    <li>
+                <ul class="ul-skills">
+                    <li *ngFor="let sk of skill.skills">
                         <p>{{sk.skillname}}</p>
-                        <meter value="{{sk.skill_level}}" max="100"></meter>
+                        <meter *ngIf="sk.skill_level!==null && sk.skill_level!==''" value="{{sk.skill_level}}" max="100"></meter>
                     </li>
                 </ul>
             </article>
         </section>
-        <section>
+        <section *ngIf="courses.length>0 && courses[0].courses.length>0 
+                     && courses[0].courses[0].course!==''">
+            <div class="maindot"></div>
             <h2>Courses</h2>
             <article *ngFor="let course of courses">
-                <ul class="couser-ul" *ngFor="let crs of course.course">
-                    <li>
+                <ul class="course-ul">
+                    <li *ngFor="let crs of course.courses">
                         {{crs.course}}
                     </li>
                 </ul>
             </article>
         </section>
-        <section>
+        <section *ngIf="achievements.length>0 && achievements[0].achievements.length>0
+                    && achievements[0].achievements[0].achievement!==''">
+            <div class="maindot"></div>
             <h2>Achievments</h2>
             <article *ngFor="let ach of achievements">
-                <div *ngFor="let a of ach.achive">
-                    <p class="p-achive">{{a.achievement}}</p>
-                </div>
+                <p class="p-achive" *ngFor="let a of ach.achievements">{{a.achievement}}</p>
             </article>
         </section>
-        <section>
+        <section *ngIf="languages.length>0 && languages[0].language.length>0 
+                     && languages[0].language[0].newlanguagename!==''">
+            <div class="maindot"></div>
             <h2 id="h2-language">Languages</h2>
             <article *ngFor="let lang of languages">
                 <div *ngFor="let Lg of lang.language">
@@ -121,13 +127,18 @@
                 </div>
             </article>
         </section>
-        <section>
+        <section *ngIf="Interests.length>0 && Interests[0].interests.length>0 
+                     && Interests[0].interests[0].interest!==''">
+            <div class="maindot"></div>
             <h2>Interests</h2>
             <article *ngFor="let inter of Interests">
-                <div *ngFor="let in of inter.interest">
-                    <p class="p-interest">{{in.interest}}</p>
-                </div>
+
+                <p class="p-interest" *ngFor="let in of inter.interests">{{in.interest}}</p>
+
             </article>
         </section>
     </section>
 </main>
+<footer>
+    <button id="downloadButton" (click)="download()">Download </button>
+</footer>

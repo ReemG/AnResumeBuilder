@@ -1,50 +1,14 @@
-body {
-    margin: 0px auto;
-}
-
-.container-fluid {
-    padding-left: 0px;
-}
-
 header {
-    padding: 0px;
-    border-bottom: 1px solid darkslategray;
-    margin: 0px auto;
-    overflow: hidden;
-    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    border-bottom: 2px solid darkslategray;
 }
 
-#leftheader {
-    width: 40%;
-}
-
-#middelheader {
-    width: 30%;
-}
-
-.couser-ul {
-    margin-left: 25px;
-}
-
-#rightheader {
-    width: 30%;
-}
-
-#leftheader h1 {
-    display: inline;
-    font-size: 3.0em;
-    margin: 10px 0px 2px 5px;
-    font-weight: bold;
-    color: black;
-    font-family: initial;
-}
-
-#leftheader p {
-    padding-left: 25px;
-    font-family: initial;
-    font-size: x-large;
-    color: teal;
-    margin: 2px 0px 15px 25px;
+#personalinfo {
+    flex: 40%;
+    order: 1;
 }
 
 #headerdot {
@@ -56,48 +20,69 @@ header {
     top: 30px;
 }
 
-#middelheader img {
+#personalinfo h1 {
+    display: inline;
+    font-size: 3.0em;
+    margin: 0px 0px 2px 5px;
+    font-weight: bold;
+    color: black;
+    font-family: initial;
+}
+
+#personalinfo p {
+    padding-left: 25px;
+    font-family: initial;
+    font-size: x-large;
+    color: teal;
+    margin: 2px 0px 15px 25px;
+}
+
+#profilephoto {
+    flex: 30%;
+    order: 2;
+}
+
+#profilephoto img {
     display: inline-block;
     padding-left: 0px;
     padding-right: 0px;
     border-radius: 50%;
-    margin-top: 5px;
-    height: 170px;
+    margin-top: 15px;
     border: 5px solid lightslategray;
-    width: 55%;
+    width: 200px;
+    height: 180px;
 }
 
-#rightheader ul {
-    height: 150px;
+#contact {
+    flex: 30%;
+    order: 3;
+}
+
+#contact ul {
     text-align: right;
     list-style: none;
-    padding-top: 15px;
     margin-bottom: 0px;
+    margin-top: 45px
 }
 
-#rightheader li {
+#contact li {
     margin-bottom: 15px;
     margin-right: 10px;
 }
 
-#rightheader ul li img {
-    width: 20%;
-    height: 25px;
+#contact ul li img {
+    width: 10%;
+    height: 20px;
     float: right;
     border: 0px;
     margin-top: 0px;
 }
 
-#rightheaderr ul li p {
+#contact ul li p {
     margin-bottom: 10px;
     font-family: initial;
     color: black;
     font-size: initial;
-}
-
-address {
-    display: inline;
-    margin-left: 15px;
 }
 
 address a {
@@ -106,31 +91,41 @@ address a {
 }
 
 main {
-    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
     margin: 0px auto;
     padding: 5px 0px;
 }
 
-.maindot {
-    height: 60px;
-    width: 40px;
-    background-color: darkslategray;
-    display: inline-block;
-    position: absolute;
-    overflow: hidden;
+section {
+    margin-bottom: 40px
+}
+
+article {
+    margin-bottom: 20px;
+}
+
+h5 {
+    margin: 10px 0px 0px 45px;
+    font-style: italic;
+    color: darkslategrey;
+    font-weight: bold;
+    font-family: initial;
+    font-size: medium;
+}
+
+p {
+    margin: 0px 0px 0px 45px;
+    font-size: initial;
+    color: black;
+    font-family: initial;
 }
 
 #leftcontent {
+    flex: 50%;
     margin-bottom: 50px;
-    overflow: hidden;
-    padding-left: 0px;
-    width: 50%;
-    box-sizing: border-box;
-}
-
-#rightcontent {
-    overflow: hidden;
-    width: 50%;
 }
 
 #leftcontent h2 {
@@ -143,35 +138,35 @@ main {
     font-weight: bold;
 }
 
-#rightcontent h2 {
-    margin-left: 33px;
-    font-size: xx-large;
-    font-family: sans-serif;
-    margin-bottom: 15px;
-    margin-top: 15px;
-    color: black;
-    font-weight: bold;
-}
-
-#rightcontent h3 {
-    margin-left: 45px;
-}
-
-#rightcontent .maindot {
+.maindot {
     height: 60px;
-    width: 35px;
+    width: 40px;
     background-color: darkslategray;
-    display: none;
+    display: inline-block;
     position: absolute;
     overflow: hidden;
 }
 
-artical {
-    margin-bottom: 20px;
+.start-time {
+    display: inline;
+    margin-left: 55px;
+    font-size: medium;
+    color: darkslategray
 }
 
-section {
-    margin-bottom: 30px;
+.end-time {
+    display: inline;
+    font-size: medium;
+    color: darkslategray
+}
+
+.place {
+    font-size: medium;
+    margin-left: 35px;
+    color: darkslategrey;
+    text-align: left;
+    float: right;
+    margin-right: 15px;
 }
 
 h3 {
@@ -190,118 +185,98 @@ h4 {
     font-family: -webkit-body;
 }
 
-h5 {
-    margin: 10px 0px 0px 55px;
-    font-style: italic;
-    color: darkslategrey;
-    font-size: medium;
-}
-
-p {
-    margin: 0px 0px 0px 45px;
-    font-size: initial;
+#ul-work {
+    margin: 3px 0px 10px 50px;
     color: black;
     font-family: initial;
+    font-size: large;
+    padding-left: 0px;
 }
 
-.start-time {
-    display: inline;
-    margin-left: 55px;
-    font-size: medium;
-    color: darkslategray;
-    font-style: italic;
+#ul-work h5 {
+    margin-left: 5px;
 }
 
-.end-time {
-    display: inline;
-    font-size: medium;
-    color: darkslategray;
-    font-style: italic;
+#ul-work li {
+    margin-left: 25px;
+    margin-bottom: 5px;
 }
 
-.place {
-    margin-right: 90px;
-    color: darkslategrey;
-    float: right;
-    font-style: italic;
-}
-
-#ul-Education1 {
+#ul-Education {
     margin-top: 3px;
     margin-bottom: 0px;
-    margin-left: 50px;
+    padding-left: 30px;
     color: black;
     font-family: initial;
-    font-size: initial;
+    font-size: large;
 }
 
-.ul-Education2 {
-    margin: 3px 0px 30px 50px;
-    margin-left: 50px;
-    color: black;
-    font-family: initial;
-    font-size: initial;
-}
-
-.ul-project1 {
-    margin-top: 3px;
-    margin-left: 50px;
-    color: black;
-    font-size: medium;
-    font-family: initial;
-}
-
-.level {
-    margin: 0px 0px 10px 38px;
-    display: block;
-    font-size: medium;
-    color: darkslategrey;
-}
-
-.h2-language {
+#ul-Education h5 {
     margin-left: 25px;
-    margin-top: 30px;
+}
+
+#ul-Education li {
+    margin-left: 45px;
+    margin-bottom: 5px;
+}
+
+.ul-project {
+    margin-top: 3px;
+    margin-left: 35px;
+    color: black;
+    font-size: large;
+    font-family: initial;
     margin-bottom: 10px;
 }
 
-.h4-language {
-    display: block;
-    margin: 0px 50px 0px 38px;
-    font-weight: normal;
-    font-size: large;
+.ul-project li {
+    margin-bottom: 5px;
 }
 
-.p-interest {
-    font-size: large;
+#rightcontent {
+    flex: 50%;
+}
+
+#rightcontent h2 {
+    margin-left: 33px;
+    font-size: xx-large;
+    font-family: sans-serif;
+    margin-bottom: 15px;
+    margin-top: 15px;
+    color: black;
+    font-weight: bold;
+}
+
+#rightcontent h3 {
     margin-left: 38px;
-    margin-bottom: 10px;
+}
+
+#rightcontent .maindot {
+    height: 60px;
+    width: 35px;
+    background-color: darkslategray;
+    display: none;
+    position: absolute;
+    overflow: hidden;
 }
 
 .ul-skills {
     margin-top: 3px;
     list-style: none;
     margin-bottom: 5px;
+    margin-left: 0px;
 }
 
-.p-achive {
-    margin-bottom: 10px;
-    font-size: x-large;
-    margin-left: 37px;
-}
-
-#ul-work {
-    margin: 3px 0px 5px 32px;
-    color: black;
-    font-family: initial;
-    font-size: medium;
+.ul-skills li {
+    margin-bottom: 5px;
 }
 
 .ul-skills li p {
     display: inline;
-    margin: 5px 0px 0px 15px;
+    margin: 5px 0px 2px 20px;
     text-align: right;
     color: black;
-    font-size: medium;
+    font-size: large;
     font-family: initial;
 }
 
@@ -315,115 +290,182 @@ meter::-webkit-meter-optimum-value {
     background: darkslategray;
 }
 
+.course-ul {
+    margin-left: 40px;
+    padding-left: 0px;
+    list-style: none;
+    font-size: large;
+}
+
+.course-ul li {
+    margin-bottom: 10px;
+}
+
+.p-achive {
+    margin-bottom: 10px;
+    margin-left: 40px;
+    font-size: large;
+}
+
+.h2-language {
+    margin-left: 25px;
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+
+.h4-language {
+    display: block;
+    margin: 0px 50px 0px 47px;
+    font-weight: normal;
+    font-size: large;
+}
+
+.level {
+    margin: 0px 0px 10px 50px;
+    display: block;
+    font-size: medium;
+    color: darkslategrey;
+}
+
+.p-interest {
+    font-size: large;
+    margin-left: 38px;
+    margin-bottom: 10px;
+}
+
 @media(max-width:992px) {
-    header h1 {
-        font-size: xx-large;
+    #personalinfo h1 {
+        font-size: 2.5em;
     }
-    header p {
+    #personalinfo p {
         padding-left: 25px;
-        font-size: large;
+        font-size: 1.3em;
     }
     #headerdot {
         height: 60px;
         width: 40px;
     }
-    header img {
-        width: 80%;
+    #profilephoto img {
+        width: 180px;
         margin-bottom: 5px;
     }
-    header ul {
-        height: auto;
+    #contact ul {
         text-align: right;
-        padding-top: 30px;
-        padding-bottom: 10px;
     }
-    header ul li img {
-        width: 15%;
-        height: 20px;
-    }
-    header ul li p {
-        font-size: initial;
-    }
-    .maindot {
-        height: 60px;
-        width: 40px;
+    #contact ul li p {
+        font-size: medium;
     }
     #leftcontent h2 {
         font-size: x-large;
     }
+    .maindot {
+        height: 55px;
+        width: 35px;
+    }
+    #ul-work {
+        font-size: medium;
+    }
     #rightcontent h2 {
         font-size: x-large;
+    }
+    .ul-skills li p {
+        font-size: medium;
     }
     .h4-language {
         font-size: medium;
         margin: 0px 0px 0px 45px;
     }
     h3 {
-        font-size: medium;
+        font-size: large;
     }
     h4 {
-        font-size: medium;
+        font-size: large;
+    }
+    .level {
+        margin-left: 45px;
     }
 }
 
 @media(max-width:768px) {
-    header h1 {
-        font-size: x-large;
+    header {
+        display: flex;
+        flex-direction: column;
     }
-    header p {
-        font-size: large;
+    #personalinfo h1 {
+        font-size: 1.5em;
+    }
+    #personalinfo p {
+        font-size: 1.0em;
         margin-bottom: 0px
     }
-    header img {
-        height: 140px;
-        width: 40%;
-        margin-left: 20px;
+    #profilephoto img {
+        height: 150px;
+        width: 150px;
+        margin-left: 15px;
     }
-    header ul {
-        height: auto;
+    #contact {
+        margin-bottom: 10px;
+    }
+    #contact ul {
         text-align: left;
-        padding-top: 0px;
-        padding-left: 0px;
+        margin-left: 0px;
+        padding-left: 5px;
+        margin-top: 5px;
     }
-    header ul li img {
-        width: 10%;
-        height: 20px;
+    #contact ul li img {
         float: left;
         margin-left: 0px;
     }
-    header ul li p {
-        margin-left: 35px;
-        width: 100%;
-        display: block;
-        font-size: medium;
+    #contact ul li p {
+        font-size: initial;
     }
-    header address {
-        margin-left: 0px;
-    }
-    header address a {
-        display: inline;
-        padding-left: 5px;
+    main {
+        display: flex;
+        flex-direction: column;
     }
     #leftcontent {
-        width: 100%;
         margin-bottom: 0px;
     }
     #rightcontent {
-        width: 100%;
         margin-bottom: 50px;
-    }
-    #rightcontent {
         margin-top: 0px;
     }
-    .ul-Education2 {
-        margin-bottom: 15px;
+    #rightcontent h2 {
+        margin-left: 50px;
+    }
+    #rightcontent h3 {
+        margin-left: 55px;
+    }
+    .ul-project {
+        margin-left: 50px;
+    }
+    .ul-skills li p {
+        margin-left: 40px;
+    }
+    .course-ul {
+        margin-left: 55px;
+    }
+    .p-achive {
+        margin-left: 55px;
+    }
+    .h4-language {
+        margin-left: 55px;
+    }
+    .level {
+        margin-left: 55px;
+    }
+    .p-interest {
+        margin-left: 55px;
     }
     #rightcontent .maindot {
-        height: 60px;
+        height: 55px;
         width: 35px;
         background-color: darkslategray;
         display: inline-block;
         position: absolute;
         overflow: hidden;
+    }
+    section {
+        margin-bottom: 30px;
     }
 }

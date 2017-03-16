@@ -1,0 +1,6 @@
+<div class="photo">
+    <img [attr.src]='file_srcs' alt="" />
+    <input type="image" id="profile-photo-delete" (click)="deleteimage()" src="resume img/delete.png" />
+    <br>
+    <input type="file" (change)="fileChange(input)" #input />
+</div>

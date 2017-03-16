@@ -1,0 +1,13 @@
+<div *ngFor="let form of forms">
+    <form class="personalinfo" [formGroup]="form">
+        <legend>Personal information:</legend>
+        <input formControlName="personalName" (change)="getData()" size="30" type="text" placeholder="Enter Your Name" required>
+        <b>*</b>
+        <br>
+        <input formControlName="carrer" (change)="getData()" size="30" type="text" placeholder="Enter Your carrer title" required>
+        <b>*</b>
+        <br>
+        <textarea formControlName="summary" (change)="getData()" ROWS="3" COLS="30" placeholder="Enter summary about you"></textarea>
+        <br>
+    </form>
+</div>

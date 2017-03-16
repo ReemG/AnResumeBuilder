@@ -1,14 +1,16 @@
-<section *ngFor="let form of forms">
-    <form [formGroup]="form">
-        <legend>Interests</legend>
-        <div formArrayName="formArray">
-            <ul *ngFor="let field of form.controls.formArray.controls; let i=index">
-                <li [formGroupName]="i">
-                    <input formControlName="interest" type="text" placeholder="Your interest" size="30">
-                </li>
-            </ul>
-        </div>
-        <button type="button" (click)="addinterest(form)">Add Interest</button>
-    </form>
+<section class="rightsections">
+    <section *ngFor="let form of forms">
+        <form [formGroup]="form">
+            <legend>Interests</legend>
+            <div formArrayName="formArray">
+                <ul *ngFor="let field of form.controls.formArray.controls; let i=index">
+                    <li [formGroupName]="i">
+                        <input formControlName="interest" type="text" placeholder="Your interest" size="25" (change)="getData()">
+                        <input type="image" class="deletefield" (click)="delete(i)" src="resume img/delete.png" />
+                    </li>
+                </ul>
+            </div>
+            <button type="button" (click)="addinterest(form)">Add Interest</button>
+        </form>
+    </section>
 </section>
-<button type="button " (click)="getData() ">Save</button>

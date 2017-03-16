@@ -1,0 +1,24 @@
+<section *ngFor="let form of forms">
+    <form class="contact" [formGroup]="form">
+        <legend>Contact information:</legend>
+        <input formControlName="phone" type="number" placeholder="Phone number" (change)="getData()" required>
+        <b>*</b>
+        <br>
+        <input formControlName="email" type="email" size="25" placeholder="example@domain.com" (change)="getData()" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required/>
+        <b>*</b>
+        <br>
+        <input formControlName="country" type="text" size="25" placeholder="Country" (change)="getData()" required>
+        <b>*</b>
+        <br>
+        <input formControlName="github" type="text" size="25" placeholder="GitHub" (change)="getData()">
+        <br>
+        <div formArrayName="formArray">
+            <div *ngFor="let field of form.controls.formArray.controls; let i=index">
+                <div [formGroupName]="i">
+                    <input formControlName="newcontact" type="text" size="25" placeholder="New contact" (change)="getData()">
+                </div>
+            </div>
+            <button type="button" (click)="addNewContact(form)">Add new contact</button>
+        </div>
+    </form>
+</section>

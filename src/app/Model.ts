@@ -1,94 +1,79 @@
-export class Model {
-        header:Header = new Header();
-        main : Main = new Main();
-    }
-export class Header{
-    leftInformation:LeftInformation = new LeftInformation();
-    middelInformation:MiddelInformation = new MiddelInformation();
-    rightInformation:RightInformation = new RightInformation();
+export class PersonalInformation {
+    personalName: string;
+    carrer: string;
+    summary: string;
 }
-export class LeftInformation{
-    personalName : string;
-    carrer : string;
-    summary : string;
+export class PersonalPhoto {
+    personalPhoto: string = "";
 }
-export class MiddelInformation{
-    personalPhoto:string;
+export class ContactInformation {
+    email: string;
+    phone: string;
+    country: string;
+    github: string;
+    newcontacts: NewContact[] = [];
 }
-export class RightInformation{
-    email : string;
-    phone : string;
-    country : string;
-    github : string;
-    newcontacts :string[] = [];
-    photo :string[] = [];
+export class NewContact {
+    newcontact: string;
 }
-export class Main{
-    leftContent :LeftContent = new LeftContent();
-    rightContent :RightContent = new RightContent();
+export class Work {
+    starttime: string;
+    endtime: string;
+    location: string;
+    jobname: string;
+    companyname: string;
+    tasks: Tasks[] = [];
 }
-export class LeftContent{
-    works : Work = new Work();
-    educations : Education = new Education();
-    projects : Projects = new Projects();
+export class Tasks {
+    task: string;
 }
-export class RightContent{
-    skills : Skillcatagory = new Skillcatagory();
-    courses : Courses =new Courses();
-    achivement : Achievements = new Achievements();
-    languages : Languages = new Languages();
-    interests : Interests = new Interests();
+export class Education {
+    starttime: string;
+    endtime: string;
+    educationName: string;
+    unviName: string;
+    educourses: EduCourses[] = [];
 }
-
-export class Work{
-    starttime : string;
-    endtime : string;
-    location : string;
-    jobname :string ;
-    companyname : string;
-    tasks : Tasks[] = [];
+export class EduCourses {
+    coursename: string;
 }
-export class Tasks{
-    task:string;
+export class Projects {
+    projectname: string;
+    roles: Roles[] = [];
 }
-export class Education{
-    starttime : string;
-    endtime : string;
-    educationName : string;
-    unviName :string ;
-    educourses : EduCourses[] = [];
+export class Roles {
+    role: string;
 }
-export class EduCourses{
-    educourse:string;
+export class Skillcatagory {
+    skillcategory: string;
+    skills: Skills[] = [];
 }
-export class Projects{
-    projectname:string;
-    roles:Roles[]=[];
+export class Skills {
+    skillname: string;
+    skill_level: number;
 }
-export class Roles{
-    role:string;
+export class Courses {
+    courses: Course[] = [];
 }
-export class Skillcatagory{
-    skillcategory : string;
-    skills :Skills[]=[];
+export class Course {
+    course: string[];
 }
-export class Skills{
-    name:string;
-    level:number;
+export class Achievements {
+    achievements: Achievement[] = [];
 }
-export class Courses{
-    course:string[];
+export class Achievement {
+    achievement: string;;
 }
-export class Achievements{
-    achive :string[];
-}
-export class Languages{
-    language : Language[]=[];
+export class Languages {
+    language: Language[] = [];
 }
 export class Language {
-    name:string;
-    level:string;
+    newlanguagename: string;
+    newlevel: string;
 }
-export class Interests{
-    interest :string[];
+export class Interests {
+    interests: Interest[] = [];
+}
+export class Interest {
+    interest: string;
 }

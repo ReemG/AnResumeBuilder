@@ -1,27 +1,30 @@
-<section *ngFor="let form of forms">
-    <form [formGroup]="form">
-        <legend>Enter your education:</legend>
-        <label>Enter the education start time:</label>
-        <input formControlName="starttime" type="date">
-        <br>
-        <label>Enter the education end time:</label>
-        <input formControlName="endtime" type="date">
-        <br>
-        <input formControlName="educationName" type="text" placeholder="The education ">
-        <br>
-        <input formControlName="unviName" type="text" placeholder="The faculty and university name" size="30">
-        <br>
-        <label>Courses:</label>
-        <br>
-        <div formArrayName="formArray">
-            <ul *ngFor="let field of form.controls.formArray.controls; let i=index">
-                <li [formGroupName]="i">
-                    <input formControlName="coursename" type="text" placeholder="The course name">
-                </li>
-            </ul>
-            <button type="submit" (click)="addcourses(form)">Add Course</button>
-        </div>
-    </form>
+<section class="leftsections">
+    <section *ngFor="let form of forms">
+        <form [formGroup]="form">
+            <input type="image" class="deletesection" (click)="delete(form)" src="resume img/delete.png" />
+            <legend>Enter your education:</legend>
+            <label>Enter the education start time:</label>
+            <input formControlName="starttime" type="date" (change)="getData()">
+            <br>
+            <label>Enter the education end time:</label>
+            <input formControlName="endtime" type="date" (change)="getData()">
+            <br>
+            <input formControlName="educationName" type="text" size="32" placeholder="The education " (change)="getData()">
+            <br>
+            <input formControlName="unviName" type="text" size="32" placeholder="The faculty and university name" (change)="getData()">
+            <br>
+            <label>Courses:</label>
+            <br>
+            <div formArrayName="formArray">
+                <ul *ngFor="let field of form.controls.formArray.controls; let i=index">
+                    <li [formGroupName]="i">
+                        <input formControlName="coursename" size="25" type="text" placeholder="The course name" (change)="getData()">
+                        <input type="image" class="deletefield" (click)="deletecourse(form,i)" src="resume img/delete.png" />
+                    </li>
+                </ul>
+                <button type="submit" (click)="addcourses(form)">Add Course</button>
+            </div>
+        </form>
+    </section>
+    <button type="button" (click)="addNewEducation()">Enter new education</button>
 </section>
-<button type="button" (click)="addNewEducation()">Enter new education</button>
-<button type="button " (click)="getData() ">Save</button>

@@ -1,19 +1,22 @@
-<section *ngFor="let form of forms">
-    <form [formGroup]="form">
-        <legend>Skills & Competences</legend>
-        <label>Enter the skills category name:</label>
-        <input formControlName="skillcategory" type="text" placeholder="Like Computer Skills category" size="30">
-        <div formArrayName="formArray">
-            <ul *ngFor="let field of form.controls.formArray.controls; let i=index">
-                <li [formGroupName]="i">
-                    <input formControlName="skillname" type="text" placeholder="The skill name">
-                    <label>Enter the skill level</label>
-                    <input formControlName="skill_level" type="number" max="100" min="0">
-                </li>
-            </ul>
-            <button type="button" (click)="addSkill(form)">Add skill</button>
-        </div>
-    </form>
+<section class="rightsections">
+    <section *ngFor="let form of forms">
+        <form [formGroup]="form">
+            <input type="image" class="deletesection" (click)="delete(form)" src="resume img/delete.png" />
+            <legend>Skills & Competences</legend>
+            <label>Enter the skills category name:</label>
+            <input formControlName="skillcategory" type="text" placeholder="Like Computer Skills category" size="30" (change)="getData()">
+            <div formArrayName="formArray">
+                <ul *ngFor="let field of form.controls.formArray.controls; let i=index">
+                    <li [formGroupName]="i">
+                        <input formControlName="skillname" type="text" size="25" placeholder="The skill name" (change)="getData()">
+                        <label>Enter the skill level</label>
+                        <input formControlName="skill_level" type="number" max="100" min="0" (change)="getData()">
+                        <input type="image" class="deletefield" (click)="deleteskill(form,i)" src="resume img/delete.png" />
+                    </li>
+                </ul>
+                <button type="button" (click)="addSkill(form)">Add skill</button>
+            </div>
+        </form>
+    </section>
+    <button type="button" (click)="addNewSkillcategory()">Add new skill category</button>
 </section>
-<button type="button" (click)="addNewSkillcategory()">Add new skill category</button>
-<button type="button " (click)="getData() ">Save</button>

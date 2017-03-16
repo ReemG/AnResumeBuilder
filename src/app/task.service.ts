@@ -1,58 +1,69 @@
 import { Injectable } from '@angular/core';
-import { Model } from './Model';
+import { PersonalInformation } from './Model';
+import { PersonalPhoto } from './Model';
+import { ContactInformation } from './Model';
 import { Work } from './Model';
 import { Education } from './Model';
-import {Projects} from './Model';
-import {Skillcatagory} from './Model';
-import {Courses} from './Model';
-import {Achievements} from './Model';
-import {Languages} from './Model';
-import {Interests} from './Model';
+import { Projects } from './Model';
+import { Skillcatagory } from './Model';
+import { Courses } from './Model';
+import { Achievements } from './Model';
+import { Languages } from './Model';
+import { Interests } from './Model';
 
 @Injectable()
 export class TaskService {
-  model: Model = new Model();
+  personalinfo: PersonalInformation[] = [];
+  personalphoto = new PersonalPhoto();
+  contactinformations: ContactInformation[] = [];
   works: Work[] = [];
   educations: Education[] = [];
   projects: Projects[] = [];
   skills: Skillcatagory[] = [];
-  courses :Courses[]=[];
+  courses: Courses[] = [];
   achievements: Achievements[] = [];
   languages: Languages[] = [];
-  Interests: Interests[]=[];
+  Interests: Interests[] = [];
   constructor() { }
 
-  addWork(work): void {
+  addInfo(info, index): void {
+    this.personalinfo[index] = info;
+  }
+  addContact(contactinfo, index): void {
+    contactinfo.newcontacts = contactinfo.formArray;
+    this.contactinformations[index] = contactinfo;
+  }
+  addWork(work, index): void {
     work.tasks = work.formArray;
-    this.works.push(work);
+    this.works[index] = work;
   }
-  addEdu(edu): void {
+  addEdu(edu, index): void {
     edu.educourses = edu.formArray;
-    this.educations.push(edu);
+    this.educations[index] = edu;
   }
-  addProj(proj):void{
+  addProj(proj, index): void {
     proj.roles = proj.formArray;
-    this.projects.push(proj);
+    this.projects[index] = proj;
   }
-  addSkill(skill):void{
+  addSkill(skill, index): void {
     skill.skills = skill.formArray;
-    this.skills.push(skill);
+    this.skills[index] = skill;
   }
-  addCourse(course):void{
-    course.course = course.formArray;
-    this.courses.push(course);
+  addCourse(course, index): void {
+    course.courses = course.formArray;
+    this.courses[index] = course;
   }
-   addAchive(achivement):void{
-    achivement.achive = achivement.formArray;
-    this.achievements.push(achivement);
+  addAchive(achivement, index): void {
+    achivement.achievements = achivement.formArray;
+    this.achievements[index] = achivement;
   }
-  addLang(lang){
+  addLang(lang, index) {
     lang.language = lang.formArray;
-    this.languages.push(lang);
+    this.languages[index] = lang;
   }
-   addInterest(Interest){
-    Interest.interest = Interest.formArray;
-    this.Interests.push(Interest);
+  addInterest(Interest, index) {
+    Interest.interests = Interest.formArray;
+    this.Interests[index] = Interest;
   }
 
 }
