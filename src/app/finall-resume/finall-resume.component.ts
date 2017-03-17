@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
 import { TaskService } from '../task.service';
 import { PersonalInformation } from '../Model';
 import { PersonalPhoto } from '../Model';
@@ -44,8 +43,7 @@ export class FinallResumeComponent implements OnInit {
     return this.photoname;
   }
 
-  constructor(private route: ActivatedRoute,
-              private taskService: TaskService, ) {
+  constructor(private taskService: TaskService, ) {
     this.personalinfo = this.taskService.personalinfo;
     this.personalphoto = this.taskService.personalphoto;
     this.contactinformation = this.taskService.contactinformations;

@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
 import { TaskService } from '../task.service';
 import { PersonalInformation } from '../Model';
 import { ContactInformation } from '../Model';
@@ -14,7 +13,6 @@ export class SaveAllComponent implements OnInit {
     personalinfo: PersonalInformation[];
     contactinformation: ContactInformation[];
     constructor(private router: Router, 
-                private route: ActivatedRoute, 
                 private taskService: TaskService) {
         this.personalinfo = this.taskService.personalinfo;
         this.contactinformation = this.taskService.contactinformations;

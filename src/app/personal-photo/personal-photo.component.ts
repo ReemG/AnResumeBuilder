@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { TaskService } from '../task.service';
-import { ActivatedRoute } from '@angular/router';
 import { PersonalPhoto } from '../Model';
 
 @Component({
@@ -12,8 +11,7 @@ export class PersonalPhotoComponent implements OnInit {
     file_srcs: string;
     personalphoto: PersonalPhoto;
 
-    constructor(private route: ActivatedRoute,
-                private taskSevice: TaskService) {
+    constructor(private taskSevice: TaskService) {
         this.personalphoto = this.taskSevice.personalphoto;
     }
 
