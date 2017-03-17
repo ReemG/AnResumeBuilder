@@ -6,31 +6,31 @@
         <p>{{Pinfo.summary}}</p>
     </div>
     <div *ngIf="personalphoto.personalPhoto 
-                && personalphoto.personalPhoto!=='resume img/profile.gif'" id="profilephoto">
+                && personalphoto.personalPhoto!=='resumeimg/profile.gif'" id="profilephoto">
         <img src="{{personalphoto.personalPhoto}}">
     </div>
     <div id="contact">
         <ul *ngFor="let info of contactinformation">
             <li *ngIf="info.email">
-                <img src="resume img/mail.png">
+                <img src="resumeimg/mail.png">
                 <p>{{info.email}}</p>
             </li>
             <li *ngIf="info.phone">
-                <img src="resume img/phone.png">
+                <img src="resumeimg/phone.png">
                 <p>{{info.phone}}</p>
             </li>
             <li *ngIf="info.country">
-                <img src="resume img/earth.png">
+                <img src="resumeimg/earth.png">
                 <p>{{info.country}}</p>
             </li>
             <li *ngIf="info.github">
-                <img src="resume img/git.png">
+                <img src="resumeimg/git.png">
                 <address>
                         <a href="http://{{info.github}}">{{info.github}}</a>
                  </address>
             </li>
             <li *ngFor="let newcontacts of info.newcontacts">
-                <img *ngIf="photo(newcontacts.newcontact)" src="resume img/{{photo(newcontacts.newcontact)}}">
+                <img *ngIf="photo(newcontacts.newcontact)" src="resumeimg/{{photo(newcontacts.newcontact)}}">
                 <p>{{newcontacts.newcontact}}</p>
             </li>
         </ul>

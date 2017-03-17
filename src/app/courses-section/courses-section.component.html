@@ -6,7 +6,7 @@
                 <div *ngFor="let field of form.controls.formArray.controls; let i=index">
                     <div [formGroupName]="i">
                         <input formControlName="course" type="text" placeholder="Course name" size="30" (change)="getData()">
-                        <input type="image" class="deletefield" (click)="delete(i)" src="resume img/delete.png" />
+                        <input type="image" class="deletefield" (click)="delete(i)" src="resumeimg/delete.png" />
                     </div>
                 </div>
                 <button type="button" (click)="addcourse(form) ">Add Course</button>

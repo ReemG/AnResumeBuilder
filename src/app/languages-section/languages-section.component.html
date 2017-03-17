@@ -7,7 +7,7 @@
                     <div [formGroupName]="i">
                         <input formControlName="newlanguagename" type="text" placeholder="The language" size="30" (change)="getData()">
                         <input formControlName="newlevel" type="text" placeholder="Your level" (change)="getData()">
-                        <input type="image" class="deletefield" (click)="delete(i)" src="resume img/delete.png" />
+                        <input type="image" class="deletefield" (click)="delete(i)" src="resumeimg/delete.png" />
                     </div>
                 </div>
                 <button type="button" (click)="addlanguage(form)">Add language</button>

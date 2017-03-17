@@ -6,7 +6,7 @@
                 <div *ngFor="let field of form.controls.formArray.controls; let i=index">
                     <div [formGroupName]="i">
                         <textarea ROWS=2 COLS=30 formControlName="achievement" type="text" placeholder="Your achievement" (change)="getData()"></textarea>
-                        <input type="image" class="deletefield" (click)="delete(i)" src="resume img/delete.png" />
+                        <input type="image" class="deletefield" (click)="delete(i)" src="resumeimg/delete.png" />
                     </div>
                 </div>
                 <button type="button" (click)="addachivement(form) ">Add Achievment</button>
